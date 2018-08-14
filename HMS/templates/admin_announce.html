@@ -1,0 +1,44 @@
+{% extends 'admin_layout.html' %}
+{% block content %}
+    <div class="container">
+        <div style="padding: 20px;">
+            <form method = "POST" action = "" >
+                <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Announcements</legend>
+
+                    <div class="form-group">
+                        {{ form2.subject.label(class="form-control-label") }}
+                        {{ form2.csrf_token }}
+                        {% if form2.subject.errors %}
+                            {{ form2.subject(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form2.subject.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form2.subject(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form2.message.label(class="form-control-label") }}
+                        {{ form2.csrf_token }}
+                            {% if form2.message.errors %}
+                                {{ form2.message(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form2.message.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form2.message(class="form-control form-control-lg") }}
+                            {% endif %}
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    {{ form2.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

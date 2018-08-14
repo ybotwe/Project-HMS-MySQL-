@@ -1,0 +1,14 @@
+{% extends "admin_layout.html" %}
+{% block content %}
+    <div class="row">
+        {% for i in reportContent.keys() %}
+            <div class="card w-75" style="margin-bottom: 30px; background-color: #E3E3E3">
+              <div class="card-body">
+                <h4 class="card-title">{{reportContent[i] + hostelName}} </h4>
+                <a style="float: right" href="{{ url_for('detailed_report', id = i) }}" class="btn btn-primary">See full details</a>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+#registerbody{
+  background-image: url('/img/back2.jpg');
+  background-size: cover;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+
+#login{
+  color: #52b1ff;
+}
+
+.hbody{
+  background-image: url('./static/img/back7.jpg');
+  background-size: cover;
+
+}
+
+.hbody h1 strong{
+  margin-top: 40px;
+}
+
+.hbody p{
+  font-size: 24px;
+}
+
+header.masthead{
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    height: 670px;
+    color: white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.icon{
+    width:91px;
+    height:50px;
+}
+
+.navbar{
+  background-color: rgba(0,0,0,1);
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+.content-section {
+  position: absolute;
+  margin-top: 500px;
+  background: hsla(0, 100%, 100%, 0.7);
+  padding: 10px 20px;
+  width: 600px;
+  margin-left:500px;
+  margin-right: 200px;
+  transform: translate(-50%,-50%);
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.lnavbar{
+  background-color: rgba(0,0,0,1);
+  position: fixed;
+  font-size: 19px;
+  float: right;
+  z-index: 9;
+  margin-left: 60px;
+  width: 100%;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+.lcontent-section {
+  position: absolute;
+  margin-top: 340px;
+  background: hsla(0, 100%, 100%, 0.7);
+  padding: 10px 20px;
+  width: 600px;
+  margin-left:500px;
+  margin-right: 200px;
+  transform: translate(-50%,-50%);
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.flash{
+  top: 110%;
+}
+
+#announcement{
+  position: absolute;
+  padding:100px;
+  background: hsla(0, 100%, 100%, 0.7);
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+  background: hsla(0, 100%, 100%, 0.7);
+  padding: 10px 20px;
+
+}
+
+
+
+

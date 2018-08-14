@@ -1,0 +1,44 @@
+{% extends "detailed_contentLayout.html" %}
+{% block content %}
+    <div style="padding: 25px;margin-top: 0px;" >
+        <form method = "POST" action = "" >
+            {{form.hidden_tag()}}
+            <fieldset class = "form-group" >
+                <legend class = "border-bottom mb-4" > {{legend}} </legend>
+                <div class="form-group">
+                    {{form.room_num.label(class="form-control-label")}}
+                    {% if form.room_num.errors %}
+                        {{form.room_num(class="form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {% for error in form.room_num.errors %}
+                                <span> {{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.room_num(class="form-control form-control-lg")}}
+                    {%endif%}
+                </div>
+                <div class = "form-group" >
+                    {{form.beds.label(class="form-control-label")}}
+                    {%if form.beds.errors%}
+                        {{form.beds(class="form-control form-control-lg is-invalid")}}
+                        <div class = "invalid-feedback">
+                            {%for error in form.beds.errors%}
+                                <span> {{error}} </span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.beds(class="form-control form-control-lg")}}
+                    {% endif%}
+                </div>
+                <div>
+                    {{table}}
+                </div>
+            </fieldset>
+            <div class = "form-group">
+                {{form.submit(class="btn btn-outline-info")}}
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

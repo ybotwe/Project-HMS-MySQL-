@@ -1,0 +1,22 @@
+{% extends 'student_layout.html' %}
+{% block content %}
+    <div class="container">
+        <h1>Select your preferred hostel</h1>
+        <div class="row">
+            {% for hostel in hostels%}
+                <div class="card col-lg-3 col-md-4 col-sm-5 col-xs-12" style="width: 20rem;background: #E6E6E6; margin-right: 40px; margin-top: 30px">
+                  <br>
+                  <img class="card-img-top img-fluid" style="width: 100%;column-count: 1; object-fit: cover;" src="{{'/'+ hostel['pic']}}" alt="{{ hostel['title'] }}">
+                  <div class="card-body">
+                    <h4 class="card-text">{{ hostel['title'] }}</h4>
+                  </div>
+                  <div class="card-action">
+
+                    <a class="btn btn-info" style="float:right;margin-bottom:15px;" href="{{ url_for('picked_hostel', id = hostel['id']) }}">See hostel details</a>
+                  </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

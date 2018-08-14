@@ -1,0 +1,18 @@
+{% extends "admin_layout.html" %}
+{% block content %}
+    <div class="container">
+        {% for room in rooms %}
+            <div class="row">
+                <div class="card w-75" style="margin-bottom: 30px; background-color: #E3E3E3">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ room.room_num }}</h4>
+                    <p class="card-text">This is a room with {{ room.beds }} beds.</p>
+                    <a style="float: right" href="{{ url_for('default_roomview', id = room.room_num) }}" class="btn btn-primary">See room details</a>
+                  </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock%}

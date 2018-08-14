@@ -1,0 +1,44 @@
+{% extends "About_TourLayout.html"%}
+{% block content %}
+    <div class="container">
+        <div>
+            <br><br><br><br><br>
+            <h1 class = "text-center display-1" id="aa">Take a Tour</h1>
+        </div>
+        <br>
+        {% for i in range(0,tourContent|length) %}
+            {% if( i % 2 == 0) %}
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12">
+                        <img style="height: 350px" class="img-fluid rounded" src="{{ tourContent[i].pic }}">
+                    </div>
+                    <div class="col-lg-8 col-sm-12">
+                        <h3>{{ tourContent[i].title }}</h3>
+                        <br>
+                        <p>{{ tourContent[i].body }}</p>
+                    </div>
+                </div>
+                <br><br>
+
+            {% else %}
+                 <div class="row">
+                    <div class="col-lg-8 col-sm-12">
+                        <h3>{{ tourContent[i].title }}</h3>
+                        <br>
+                        <p>{{ tourContent[i].body }}</p>
+                    </div>
+                    <div  class="col-lg-4 col-sm-12">
+                        <img style="height: 350px" class="img-fluid rounded " src="{{ tourContent[i].pic }}">
+                    </div>
+                </div>
+                <br><br>
+
+            {% endif %}
+
+        {% endfor %}
+
+        <br>
+    </div>
+
+
+{% endblock %}

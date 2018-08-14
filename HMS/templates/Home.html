@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="../static/main.css" rel="stylesheet">
+    <title>HMS</title>
+  </head>
+
+
+  <body style="background-image: url('./static/img/back7.jpg');background-size: cover;">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top">
+      <div class="container">
+        <a href="/"> <img class="icon navbar-brand js-scroll-trigger" src="/static/img/whitelogo.png" alt="HMS icon" href="{{ url_for('home') }}"> </a>
+        <button class="navbar-toggler navbar-dark navbar-toggler-right " type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+              {% if current_user.is_authenticated  %}
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger text-white" href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger text-white" href="{{ url_for('tour') }}">Take a Tour</a>
+                    </li>
+                    {% if current_user.role == 'admin' %}
+                        <li class="nav-item">
+                          <a class="nav-link js-scroll-trigger text-white" href="{{ url_for('admin')}}">Admin Home</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                          <a class="nav-link js-scroll-trigger text-white" href="{{ url_for('student')}}">Student Home</a>
+                        </li>
+                    {% endif %}
+              {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger text-white" href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger text-white" href="{{ url_for('tour') }}">Take a Tour</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger text-white" href="{{ url_for('signup')}}">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger text-white" href="{{ url_for('login') }}">Login</a>
+                    </li>
+              {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-black mx-auto">
+            <br><br><br><br>
+            <h1 class="text-uppercase">
+              Welcome to Ashesi Hostel Management System<br>
+              <strong>HMS</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-black mx-auto">
+            <p class="text-white mb-5">A reliable service that helps hostels manage the day to day activities in the respective hostels.<br>And also help students secure and leave rooms/hostels to other ones</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{ url_for('signup')}}">Register Now</a><br><br>
+            <a>Already Have An Account? </a><a id="login" href="{{ url_for('login')}}">Login Here</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+  </body>
+</html>

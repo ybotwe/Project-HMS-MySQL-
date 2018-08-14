@@ -1,0 +1,39 @@
+{% extends 'student_layout.html' %}
+{% block content %}
+    <div class="container">
+        <strong><legend>{{ room.room_num }}</legend></strong>
+        <p>This is a {{ room.beds }}-in-a-room</p><br>
+
+        <h4>Current Occupants</h4>
+        {{ table}}
+    </div>
+    <div>
+       <button type="button" class = "btn btn-lg btn-danger m-1" data-toggle="modal" data-target="#confirmModal">
+                Leave room
+       </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmModalLabel">Confirm leave room</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Click confirm that you want to leave room ({{ room.room_num }})</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <form action = "{{ url_for('student_leaveroom') }}" method="POST">
+                <input class="btn btn-danger" type="submit" value = "Confirm">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
